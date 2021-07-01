@@ -6,15 +6,8 @@
 <meta name="viewport" content="width=device-width, intial-scale=1.0">
 <title>Blood In Need</title>
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" href="{{asset('images/logo.png')}}"/>
-	<!--style----->
-	<style>
-		body{
-			font-family:poppins;
-		}
-	</style>
-	</head>
+
+</head>
 <body>
     <section id="main">
         <nav>
@@ -42,10 +35,15 @@
 
                     </div>
                     <input type="text" name="name" placeholder="Full Name">
+                    <!-- Error Alert -->
+                    <div style="display: none" data-id='a' id="error1" class="alert alert-danger alert-dismissible fade show">@error('name'){{ $message }}@enderror</div>
                     <input type="tel" name="phone" placeholder="Phone Number">
+                    <div id="error2" class="ErrorAlert alert alert-danger alert-dismissible fade show">@error('phone'){{ $message }}@enderror</div>
                     <input type="email" name="email" placeholder="Email">
-                    <input type="password" name="password" placeholder="Password">
-                    <input type="password" name="password" placeholder="Confirm Password">
+                    <div id="error3" class="alert alert-danger alert-dismissible fade show">@error('email'){{ $message }}@enderror</div>
+                    <input id="password" type="password" name="password" placeholder="Password">
+                    <div id="error4" class="alert alert-danger alert-dismissible fade show">@error('password'){{ $message }}@enderror</div>
+                    <input id="password_confirmation" type="password" name="password" placeholder="Confirm Password">
                     <button type="submit">SignUp</button>
                     </form>
                 </div>
