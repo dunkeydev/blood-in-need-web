@@ -15,8 +15,15 @@ class Users extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->text('firstname');
+            $table->text('lastname');
+            $table->text('username');
             $table->integer('phone');
+            $table->text('bloodgroup');
+            $table->text('gender');
+            $table->text('district');
+            $table->text('division');
+            $table->integer('postcode');
             $table->text('email');
             $table->text('password');
             $table->boolean('verified');

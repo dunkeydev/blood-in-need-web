@@ -22,7 +22,7 @@ class HomeController extends Controller
             'name'=>'required',
             'phone'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required|min:6|max:12',
+            'password'=>'required|confirmed|min:6|max:12',
 
         ]);
 

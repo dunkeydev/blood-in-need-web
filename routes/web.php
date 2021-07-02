@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -21,10 +22,16 @@ Route::post('/user/save', [HomeController::class, 'saveUser']);
 Route::post('/user/check', [HomeController::class, 'checklogin']);
 Route::post('/user/logout',[HomeController::class,'userlogout']);
 
+Route::get('/create-account',function(){
+    return view('create-account');
+});
 
 Route::group(['middleware'=>['UserAuthCheck']], function(){
     Route::get('/welcome', function () {
         return view('welcome');
     });
     Route::get('/home',[HomeController::class,'check']);
+
+    Route::post('/user/create', [CreateController::class,'createaccount']);
+
 });
