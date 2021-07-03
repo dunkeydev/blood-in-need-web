@@ -13,7 +13,7 @@ class CreateController extends Controller
             'firstname'=>'required',
             'lastname'=>'required',
             'username'=>'required|unique:users',
-            'phone'=>'required|integer',
+            'phone'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:11',
             'gender'=>'required',
             'bloodgroup'=>'required',
             'division'=>'required',
@@ -21,8 +21,19 @@ class CreateController extends Controller
             'postcode'=>'required|integer'
         ]);
 
-        $data = ['LoggedUserInfo'=>User::where('id','=', session('LoggedUser'))->first()];
+        $data = User::find(session('LoggedUser'));
+        $data->firstname = $request->firstname;
+        $data->lastname = $request->lastname;
+        $data->username = $request->username;
+        $data->phone = $request->phone;
+        $data->gender = $request->gender;
+        $data->bloodgroup = $request->bloodgroup;
+        $data->division = $request->division;
+        $data->district = $request->district;
+        $data->postcode = $request->postcode;
 
-        return $request->input();
+        $save = $data->save();
+
+        return dd($save);
     }
 }

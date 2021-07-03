@@ -23,7 +23,8 @@
             <input type="text" name="username" placeholder="Username" class="form-control">
         </div>
         <div class="form-wrapper">
-            <input type="text" name="phone" placeholder="Phone Number" class="form-control">
+            <input type="number" name="phone" placeholder="Phone Number" class="form-control">
+            <div class="alert alert-danger alert-dismissible fade show">@error('phone'){{ $message }}@enderror</div>
         </div>
         <div class="form-wrapper">
             <select name="gender" id="" class="form-control">
@@ -54,7 +55,7 @@
                 <option value="rangpur">Rangpur</option>
                 <option value="mymensingh">Mymensingh</option>
             </select>
-            <select name="district" id="" class="form-control">
+            <select name="district" id="" class= id="error""form-control">
                 <option value="" disabled selected>District</option>
                 <option value="bagerhat">Bagerhat</option>
                 <option value="bandarban">Bandarban</option>
@@ -123,7 +124,8 @@
             </select>
         </div>
         <div class="form-wrapper">
-            <input type="text" name="postcode" placeholder="Post Code" class="form-control">
+            <input type="number" name="postcode" placeholder="Post Code" class="form-control">
+            <div class="alert alert-danger alert-dismissible fade show">@error('postcode'){{ $message }}@enderror</div>
         </div>
         <button type="submit">Register</button>
     </form>

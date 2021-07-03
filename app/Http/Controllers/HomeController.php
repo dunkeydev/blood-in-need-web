@@ -18,20 +18,22 @@ class HomeController extends Controller
     function saveUser(Request $request)
     {
         $request->validate([
-
-            'name'=>'required',
-            'phone'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required|confirmed|min:6|max:12',
-
         ]);
 
         $user = new User();
-
-        $user->name = $request->name;
         $user->email = $request->email;
-        $user->phone = $request->phone;
         $user->password = Hash::make($request->password);
+        $user->firstname = "";
+        $user->lastname = "";
+        $user->username = "";
+        $user->phone = "0";
+        $user->gender = "";
+        $user->bloodgroup = "";
+        $user->division = "";
+        $user->district = "";
+        $user->postcode = "0";
         $user->verified = 0;
 
         $save = $user->Save();

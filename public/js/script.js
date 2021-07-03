@@ -4,8 +4,6 @@
 
             const err1 = document.getElementById('error1').innerText;
             const err2 = document.getElementById('error2').innerText;
-            const err3 = document.getElementById('error3').innerText;
-            const err4 = document.getElementById('error4').innerText;
 
 
 
@@ -17,8 +15,6 @@
             const registerButton = document.getElementById('test');
             const error1 = document.getElementById('error1');
             const error2 = document.getElementById('error2');
-            const error3 = document.getElementById('error3');
-            const error4 = document.getElementById('error4');
 
 
 
@@ -41,26 +37,6 @@
             else
             {
                 error2.style.display = "none";
-            }
-
-            if(err3!=="")
-            {
-                x.style.display = "block";
-                container.classList.add("right-panel-active")
-            }
-            else
-            {
-                error3.style.display = "none";
-            }
-
-            if(err4!=="")
-            {
-                x.style.display = "block";
-                container.classList.add("right-panel-active")
-            }
-            else
-            {
-                error4.style.display = "none";
             }
 
 

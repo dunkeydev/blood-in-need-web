@@ -18,7 +18,7 @@ class Users extends Migration
             $table->text('firstname');
             $table->text('lastname');
             $table->text('username');
-            $table->integer('phone');
+            $table->text('phone');
             $table->text('bloodgroup');
             $table->text('gender');
             $table->text('district');
